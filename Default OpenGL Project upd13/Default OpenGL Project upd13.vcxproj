@@ -23,7 +23,7 @@
     <ProjectGuid>{f2fbcda7-5231-4cfd-877e-8fd61cc43a07}</ProjectGuid>
     <RootNamespace>Default_OpenGL_Project_upd13</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Slots</ProjectName>
+    <ProjectName>Image Proc</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -73,18 +73,27 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <ExecutablePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\include;F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLFW\Win32\include;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLFW\Win32\lib-vc2019;F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\lib\Release\Win32;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <ExecutablePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\include;F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLFW\Win32\include;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLFW\Win32\lib-vc2019;F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\lib\Release\Win32;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);F:\dev\opencv\build\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;F:\dev\opencv\build\x64\vc15\lib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <ExecutablePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\include\GL;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLFW\x64\lib-vc2019;F:\dev\barrels1\Default-OpenGL-Project-upd13-master\Default OpenGL Project upd13\Dependencies\GLEW\lib\Release\x64;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -92,28 +101,30 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\Win32\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\Win32\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\Win32</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;winmm.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\Win32\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\Win32</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\x64\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;winmm.lib;opencv_world420d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,17 +135,20 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\Win32</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;winmm.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib; glfw3.lib; opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -146,14 +160,15 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)Dependencies\GLFW\Win32\lib-vc2019;$(ProjectDir)Dependencies\GLEW\lib\Release\x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;winmm.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -168,6 +183,10 @@
     <None Include="Dependencies\GLEW\doc\install.html" />
     <None Include="Dependencies\GLEW\doc\log.html" />
     <None Include="Dependencies\GLEW\doc\wglew.html" />
+    <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\core_fragment_shader(no tex).glsl" />
+    <None Include="res\shaders\core_fragment_shader.glsl" />
+    <None Include="res\shaders\core_vertex_shader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencies\GLEW\include\GL\eglew.h" />
@@ -176,18 +195,57 @@
     <ClInclude Include="Dependencies\GLEW\include\GL\wglew.h" />
     <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3.h" />
     <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3native.h" />
-    <ClInclude Include="src\MyShaders.h" />
-    <ClInclude Include="src\Some_classes.h" />
-    <ClInclude Include="src\Vars.h" />
+    <ClInclude Include="Dependencies\GLFW\Win32\include\GLFW\glfw3.h" />
+    <ClInclude Include="Dependencies\GLFW\Win32\include\GLFW\glfw3native.h" />
+    <ClInclude Include="src\Controls.h" />
+    <ClInclude Include="src\DrawElements.h" />
+    <ClInclude Include="src\GUI.h" />
+    <ClInclude Include="src\InitWindow.h" />
+    <ClInclude Include="src\opencv\morph.h" />
+    <ClInclude Include="src\opencv\Blocks.h" />
+    <ClInclude Include="src\opencv\Canny.h" />
+    <ClInclude Include="src\opencv\convert.h" />
+    <ClInclude Include="src\opencv\DCT.h" />
+    <ClInclude Include="src\opencv\Gauss.h" />
+    <ClInclude Include="src\opencv\Histogram.h" />
+    <ClInclude Include="src\opencv\Levels.h" />
+    <ClInclude Include="src\opencv\opencv.h" />
+    <ClInclude Include="src\opencv\pseudoColor.h" />
+    <ClInclude Include="src\opengl.h" />
+    <ClInclude Include="src\ReadDirectory.h" />
+    <ClInclude Include="src\Textures.h" />
+    <ClInclude Include="src\vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\GLEW\lib\Release\Win32\glew32s.lib" />
     <Library Include="Dependencies\GLFW\lib-vc2019\glfw3.lib" />
+    <Library Include="Dependencies\GLFW\Win32\lib-vc2019\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Controls.cpp" />
+    <ClCompile Include="src\DrawElements.cpp" />
+    <ClCompile Include="src\GUI.cpp" />
+    <ClCompile Include="src\InitWindow.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\MyShaders.cpp" />
-    <ClCompile Include="src\Some_classes.cpp" />
+    <ClCompile Include="src\opencv\Blocks.cpp" />
+    <ClCompile Include="src\opencv\Canny.cpp" />
+    <ClCompile Include="src\opencv\DCT.cpp" />
+    <ClCompile Include="src\opencv\Gauss.cpp" />
+    <ClCompile Include="src\opencv\morph.cpp" />
+    <ClCompile Include="src\opencv\opencvapp.cpp" />
+    <ClCompile Include="src\opencv\convert.cpp" />
+    <ClCompile Include="src\opencv\Histogram.cpp" />
+    <ClCompile Include="src\opencv\Levels.cpp" />
+    <ClCompile Include="src\opencv\pseudoColor.cpp" />
+    <ClCompile Include="src\ReadDirectory.cpp" />
+    <ClCompile Include="src\Textures.cpp" />
+    <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\symbols\digits\1.png" />
+    <Image Include="res\textures\tab.png" />
+    <Image Include="res\textures\tex2.png" />
+    <Image Include="res\textures\tex1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

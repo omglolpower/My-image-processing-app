@@ -1,0 +1,34 @@
+#include <iostream>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+cv::Mat convert_to_Y(cv::Mat &img)
+{
+	unsigned short Y = 0;
+	cv::Mat resultImage = cv::Mat::zeros(img.rows, img.cols, CV_8UC1);
+	for (unsigned int x = 0; x < img.cols; ++x)
+	{
+		for (unsigned int y = 0; y < img.rows; ++y)
+		{
+			Y = 36 * img.at<cv::Vec3b>(y, x)[2] + 
+				53 * img.at<cv::Vec3b>(y, x)[1] + 
+				11 * img.at<cv::Vec3b>(y, x)[0];
+			Y /= 100;
+			resultImage.at<uchar>(y, x) = static_cast<unsigned char>(Y);
+		}
+	}
+	return resultImage;
+}
+
+int main()
+{
+	auto img1 = cv::imread("res/images/img1.jpg");
+	cv::imshow("img1", img1);
+
+	auto img2 = cv::imread("res/images/img2.png");
+	cv::Mat img1_Y = convert_to_Y(img2);
+	cv::imshow("img2", img2);
+	cv::imshow("img1_Y" , img1_Y);
+	waitKey();
+
+}
